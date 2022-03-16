@@ -51,15 +51,15 @@ const contentColumn = document.getElementById('content-column');
 
 // Header //
 const header = document.getElementById('header');
-let headerContent = document.createElement('div');
+const headerContent = document.createElement('div');
 
-headerContent.classList.add('headerContent');
+headerContent.classList.add('header-content');
 
 headerContent.innerHTML = `
 <div id= "back-button">
-<i class= "fa-light fa-arrow-left fa"></i>
+        <i class= "fa-light fa-arrow-left fa">
+        </i>
 </div>
-
 <div class= "flex-column">
     <div id= "twitter-title">
         <p class= "display-name">${user1.displayName}</p>
