@@ -35,8 +35,6 @@ html,body{
     width: 37.375rem;
     height: 3.313rem;
     border-bottom: 2px solid #EFF3F4;
-    padding-left: 1rem;
-    padding-right: 1rem;
     padding-top: .5rem;
     
 }
@@ -50,6 +48,8 @@ html,body{
 #back-button{
     margin-top: 1rem;
     margin-right: 2rem;
+    margin-left: 1rem;
+    
 }
 
 
@@ -63,6 +63,7 @@ html,body{
     font-size: 1.25rem;
     font-weight: bold;
     display: inline;
+    color: #0F141A;
 }
 
 .sub-header{
@@ -71,3 +72,46 @@ html,body{
 }
 
 /* Cover Photo */
+
+#cover-photo{
+width: 37.375rem;
+height: 12.458rem;
+margin: 0;
+}
+
+/* Profile Picture */
+
+/* Profile Container */
+#profile-container{
+    width: 37.375rem;
+    height: 13.991rem;
+}
+
+#profile-detail .flex-column{
+    justify-content: space-between;
+}
+/* Social Nav */
+#nav-content{
+    
+    height: 3.313rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-bottom: 2px solid #EFF3F4;
+}
+
+.nav-selector{
+    vertical-align: middle;
+    text-align: center;
+   padding-top: 1rem;
+   height: 1.25;
+   font-size: 15px;
+   color: #536471;
+}
+
+.nav-selector:nth-of-type(1){
+    color: #0F141A;
+    border-bottom: 4px solid rgb(29, 155, 240);
+    border-radius: 1px;
+    font-weight: 700;
+}
