@@ -71,6 +71,7 @@ html,body{
     color: #536471;
 }
 
+
 /* Cover Photo */
 
 #cover-photo{
@@ -85,10 +86,72 @@ margin: 0;
 #profile-container{
     width: 37.375rem;
     height: 13.991rem;
+    padding-top: 12px;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
 #profile-detail .flex-column{
     justify-content: space-between;
+}
+
+#sub-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+#sub-buttons button:nth-of-type(1){
+    margin-right: .5rem;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid #CFD9DD;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding-bottom: .5rem;
+}
+
+#sub-buttons button:nth-of-type(1):hover{
+    background-color: #EFF3F4;
+}
+#sub-buttons button:nth-of-type(2){
+    margin-right: 2rem;
+    width: 5rem;
+    height: 2.25rem;
+    border-radius: 2rem;
+    border: none;
+    color: white;
+    background-color: #0F141A;
+    font-size: 0.938rem;
+    font-weight: 700;
+}
+ 
+#sub-bio .sub-header{
+margin-bottom: 1rem;
+font-size: 0.938rem;
+}
+
+#joined-date{
+    color: #536471;
+
+}
+
+#social-counter{
+    display: flex;
+    flex-direction: row;
+}
+
+#social-counter p{
+    margin-right: .5rem;
+    font-weight: 700;
+    font-size: 15px;
+}
+#social-counter span{
+    margin-right: 1rem;
+    font-weight: normal;
+    color: #536471;
 }
 /* Social Nav */
 #nav-content{
@@ -106,12 +169,27 @@ margin: 0;
    padding-top: 1rem;
    height: 1.25;
    font-size: 15px;
-   color: #536471;
+   color: #536371;
+   width: 100%;
 }
 
 .nav-selector:nth-of-type(1){
-    color: #0F141A;
-    border-bottom: 4px solid rgb(29, 155, 240);
+    color: rgb(29, 155, 240);
+    border-bottom: 2.5px solid rgb(29, 155, 240);
     border-radius: 1px;
     font-weight: 700;
 }
+
+#nav-content .nav-selector:hover{
+    cursor: pointer;
+    background-color: #EFF3F4;
+}
+
+/* Tweet Container */
+
+#tweetContent{
+    width: 37.375rem;
+    height: fit-content;
+    border-bottom: 2px solid #EFF3F4;
+}
+
