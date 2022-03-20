@@ -208,12 +208,13 @@ user1.tweets.forEach(function(TweetsU1,i){
         ${user1.userName}
         </div>
         <div id = "tweet-timestamp">
-        ${TweetsU1.timestamp}
+        ${new Date(TweetsU1.timestamp).toLocaleString()}
         </div>
         <div id= "options-tweet-button">
-        <button>
-        ...
-        </div>
+        <p>
+            ...
+        </p>
+        </div>  
     </div>
     <div id= "tweet-text">
     ${TweetsU1.text}
