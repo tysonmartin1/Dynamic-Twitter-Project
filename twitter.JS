@@ -1,52 +1,67 @@
-var user1 = {
-    tweetCounter: 17.1,
-    userName: '@elonmusk',
-    displayName: 'Elon Musk',
-    joinedDate: 'June 2009',
-    followingCount: 112,
-    followerCount: 78.2,
-    avatarURL: 'assets/elonmusk.jpg',
-    coverPhotoURL: 'assets/elonmusk-cover.jpeg',
-    tweets: [
-        {
-            text: 'I admit to judging books by their cover',
-            timestamp: '2/10/2021 00:01:20'
-        },
-        {
-            text: 'Starship to the moon',
-            timestamp: '2/09/2021 18:37:12'
-        },
-        {
-            text: 'Out on launch pad, engine swap underway',
-            timestamp: '2/09/2021 12:11:51'
-        }
-    ]
+var users = {
+    user1 : {
+        tweetCounter: 17.1,
+        userName: '@elonmusk',
+        displayName: 'Elon Musk',
+        joinedDate: 'June 2009',
+        followingCount: 112,
+        followerCount: 78.2,
+        avatarURL: 'assets/elonmusk.jpg',
+        coverPhotoURL: 'assets/elonmusk-cover.jpeg',
+        tweets: [
+            {
+                text: 'I admit to judging books by their cover',
+                timestamp: '2/10/2021 00:01:20'
+            },
+            {
+                text: 'Starship to the moon',
+                timestamp: '2/09/2021 18:37:12'
+            },
+            {
+                text: 'Out on launch pad, engine swap underway',
+                timestamp: '2/09/2021 12:11:51'
+            }
+        ]
+    },
+
+     user2 : {
+        tweetCounter: '3,812',
+        userName: '@BillGates',
+        displayName: 'Bill Gates',
+        joinedDate: 'June 2009',
+        followingCount: 360,
+        followerCount: 57.6,
+        avatarURL: 'assets/billgates.jpg',
+        coverPhotoURL: 'assets/billgates-cover.jpeg',
+        tweets: [
+            {
+                text: 'Everybody asks, how is the next Windows coming along? But nobody asks how is Bill? :/',
+                timestamp: '2/10/2021 00:01:20'
+            },
+            {
+                text: 'Should I start tweeting memes? Let me know in a comment.',
+                timestamp: '2/09/2021 18:37:12'
+            },
+            {
+                text: 'In 2020, I read a book every hour.',
+                timestamp: '2/09/2021 12:11:51'
+            }
+        ]
+    }
 };
 
-var user2 = {
-    tweetCounter: '3,812',
-    userName: '@BillGates',
-    displayName: 'Bill Gates',
-    joinedDate: 'June 2009',
-    followingCount: 274,
-    followerCount: 53800000,
-    avatarURL: 'assets/billgates.jpg',
-    coverPhotoURL: 'assets/billgates-cover.jpeg',
-    tweets: [
-        {
-            text: 'Everybody asks, how is the next Windows coming along? But nobody asks how is Bill? :/',
-            timestamp: '2/10/2021 00:01:20'
-        },
-        {
-            text: 'Should I start tweeting memes? Let me know in a comment.',
-            timestamp: '2/09/2021 18:37:12'
-        },
-        {
-            text: 'In 2020, I read a book every hour.',
-            timestamp: '2/09/2021 12:11:51'
-        }
-    ]
-};
+// Dynamic Twitter
+function getParameter(){
+    let parameter = new URLSearchParams(window.location.search)
+    return parameter.get("user");
+}
+
+var parameterResults = getParameter();
+console.log(parameterResults)
+
+
+const selectedUser = users[parameterResults];
+console.log(selectedUser)
 
 const contentColumn = document.getElementById('content-column');
 
@@ -63,7 +78,7 @@ headerContent.innerHTML = `
 </div>
 <div class= "flex-column">
     <div id= "twitter-title">
-        <p class= "display-name">${user1.displayName}</p>
+        <p class= "display-name">${selectedUser.displayName}</p>
 
             <svg viewBox="0 0 24 24" aria-label="Verified account" class="r-1cvl2hr r-4qtqp9 r-yyyyoo r-1xvli5t r-f9ja8p r-og9te1 r-bnwqim r-1plcrui r-lrvibr">
                 <g>
@@ -74,7 +89,7 @@ headerContent.innerHTML = `
 
     </div>
     <div class= "sub-header">
-        ${user1.tweetCounter + "K Tweets"}
+        ${selectedUser.tweetCounter + "K Tweets"}
     </div>
 </div>
 `;
@@ -86,8 +101,8 @@ header.appendChild(headerContent);
 const coverPhoto = document.createElement('div');
 
 coverPhoto.setAttribute('id','cover-photo')
- 
- coverPhoto.innerHTML = `
+
+coverPhoto.innerHTML = `
 <div id= "profile-picture">
 
  </div>
@@ -113,7 +128,7 @@ profileDetail.innerHTML = `
 <div id= "sub-bio">
     <div class= "flex-column">
         <div id= "twitter-title">
-            <p class= "display-name">${user1.displayName}</p>
+            <p class= "display-name">${selectedUser.displayName}</p>
 
             <svg viewBox="0 0 24 24" aria-label="Verified account" class="r-1cvl2hr r-4qtqp9 r-yyyyoo r-1xvli5t r-f9ja8p r-og9te1 r-bnwqim r-1plcrui r-lrvibr">
                 <g>
@@ -124,18 +139,18 @@ profileDetail.innerHTML = `
         </div>
         
         <div class= "sub-header">
-            ${user1.userName}
+            ${selectedUser.userName}
         </div>
         
         <div id= "joined-date">
             <i class="fa-duotone fa-calendar-days fa"> 
             </i> 
-            ${" Joined " + user1.joinedDate}
+            ${" Joined " + selectedUser.joinedDate}
         </div> 
         
         <div id= "social-counter">
-            <p>${user1.followingCount}<span> Following</span></p>
-            <p>${user1.followerCount + "M"}<span> Followers</span></p>
+            <p>${selectedUser.followingCount}<span> Following</span></p>
+            <p>${selectedUser.followerCount + "M"}<span> Followers</span></p>
         </div>
     </div>
 </div>
@@ -175,11 +190,10 @@ contentNav.appendChild(contentNavContent);
 // Tweet Container //
 
 const tweetContainer = document.getElementById('tweet-container');
+const userTweets = `${selectedUser.tweets}`
 
 
-const TweetsU1 = `${user1.tweets}`;
-
-user1.tweets.forEach(function(TweetsU1,i){
+selectedUser.tweets.forEach(function(userTweets,i){
     
     
     const tweetContent = document.createElement('div');
@@ -189,12 +203,12 @@ user1.tweets.forEach(function(TweetsU1,i){
     tweetContent.innerHTML=` 
 <div id = "profile-picture-column">
     <div id= "profile-picture">
-    
+        <img src = ${selectedUser.avatarURL}>
     </div>
 </div>
 <div id ="tweet-body">
     <div id= "tweet-header">
-        <p class= "display-name">${user1.displayName}</p>
+        <p class= "display-name">${selectedUser.displayName}</p>
 
         <svg viewBox="0 0 24 24" aria-label="Verified account" class="r-1cvl2hr r-4qtqp9 r-yyyyoo r-1xvli5t r-f9ja8p r-og9te1 r-bnwqim r-1plcrui r-lrvibr">
             <g>
@@ -204,10 +218,10 @@ user1.tweets.forEach(function(TweetsU1,i){
         </svg>
         
         <div class= "sub-header">
-        ${user1.userName}
+        ${selectedUser.userName}
         </div>
         <div id = "tweet-timestamp">
-        ${new Date(TweetsU1.timestamp).toLocaleString()}
+        ${new Date(userTweets.timestamp).toLocaleString()}
         </div>
         <div id= "options-tweet-button">
         <p>
@@ -216,7 +230,7 @@ user1.tweets.forEach(function(TweetsU1,i){
         </div>  
     </div>
     <div id= "tweet-text">
-    ${TweetsU1.text}
+    ${userTweets.text}
     </div>
 </div>
 
@@ -224,4 +238,3 @@ user1.tweets.forEach(function(TweetsU1,i){
 
     tweetContainer.appendChild(tweetContent);
 })
-console.log(TweetsU1)
