@@ -114,31 +114,20 @@ height: 12.458rem;
     justify-content: end;
 }
 
-#sub-buttons button:nth-of-type(1){
-    margin-right: .5rem;
-    width: 2.2rem;
-    height: 2.2rem;
-    border-radius: 50%;
-    background-color: white;
-    border: 1px solid #CFD9DD;
-    font-size: 1.2rem;
-    font-weight: 700;
-    padding-bottom: .5rem;
-}
 
-#sub-buttons p:hover{
-    background-color: #EFF3F4;
-}
-#sub-buttons button:nth-of-type(2){
+#sub-buttons button{
     margin-right: 2rem;
-    width: 5rem;
+    width: 6.5rem;
     height: 2.25rem;
     border-radius: 2rem;
     border: none;
     color: white;
-    background-color: #0F141A;
-    font-size: 0.938rem;
+    background-color: rgb(29, 155, 240);
+    font-size: 1rem;
     font-weight: 700;
+}
+#sub-buttons button:hover{
+    cursor: pointer;
 }
 #sub-bio{
 margin-top: 2rem;

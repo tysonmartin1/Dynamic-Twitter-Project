@@ -93,6 +93,8 @@ coverPhoto.setAttribute('id','cover-photo')
  </div>
 
  `;
+
+ 
 coverPhotoContainer.appendChild(coverPhoto)
 
 // Profile Container
@@ -104,10 +106,7 @@ profileDetail.setAttribute('id','profile-detail');
 profileDetail.innerHTML = `
 <div id="sub-buttons">
     <button>
-        ...
-    </button>
-    <button>
-        Follow
+        Following
     </button> 
 </div>
 
